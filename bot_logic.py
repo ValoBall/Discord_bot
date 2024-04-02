@@ -16,7 +16,7 @@ def gen_emodji():
 
 
 def flip_coin():
-    flip = random.randint(0, 2)
+    flip = random.randint(0, 1)
     if flip == 0:
         return "HEADS"
     else:
