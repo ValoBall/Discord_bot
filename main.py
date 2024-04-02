@@ -1,4 +1,5 @@
 import discord
+from settings import set
 from bot_logic import gen_pass
 # Zmienna intencje przechowuje uprawnienia bota
 intents = discord.Intents.default()
@@ -30,5 +31,5 @@ async def on_message(message):
     else:
         await message.channel.send(message.content)
 
-client.run('MTIyMDA0NzU5NDE1NjE5NTkyMA.GPaSJ7.99PbTmqna8YQpqM7mD1m03gS-02c3TBkMiH9AY')
+client.run(set)
    
