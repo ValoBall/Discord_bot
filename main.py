@@ -30,7 +30,13 @@ async def on_message(message):
     elif message.content.startswith('$smile'):
         await message.channel.send(gen_emodji())
     elif message.content.startswith('$coin'):
-        await message.channel.send(flip_coin())          
+        await message.channel.send(flip_coin()) 
+    elif  message.content.startswith('$heh'):
+        if len(message.content) > 4:
+            count_heh = int(message.content[4:])
+        else:
+            count_heh = 5
+        await message.channel.send("he" * count_heh)             
     elif message.content.startswith('$password'):
         await message.channel.send(f'Twoje hasło to:\n{gen_pass(10)}')       
     else:
