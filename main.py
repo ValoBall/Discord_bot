@@ -1,6 +1,6 @@
 import discord
 from settings import set
-from bot_logic import gen_emodji, gen_pass
+from bot_logic import flip_coin, gen_emodji, gen_pass
 
 # Zmienna intencje przechowuje uprawnienia bota
 intents = discord.Intents.default()
@@ -28,7 +28,9 @@ async def on_message(message):
     elif message.content.startswith('$bye'):
         await message.channel.send("\\U0001f642")
     elif message.content.startswith('$smile'):
-        await message.channel.send(gen_emodji())      
+        await message.channel.send(gen_emodji())
+    elif message.content.startswith('$coin'):
+        await message.channel.send(flip_coin())          
     elif message.content.startswith('$password'):
         await message.channel.send(f'Twoje hasło to:\n{gen_pass(10)}')       
     else:
